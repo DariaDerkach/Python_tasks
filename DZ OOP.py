@@ -5,6 +5,65 @@
 Наследование
 Продемонстрировать работу данных классов, отвечающих за примеры парадигм ООП"""
 
+# Полиморфизм
+
+# class Cats:
+#     def __init__(self, paws=4, ears=2):
+#         self.paws = paws
+#         self.ears = ears
+#
+#     def doing(self):
+#         print("Мяуууу")
+#
+#     def feed(self):
+#         self.doing()
+#         print("Насыпала корм")
+#         self.__cat_eat()
+#         self.__moor_moor()
+#
+#     def __cat_eat(self):
+#         print("Кошка ест")
+#
+#     def __moor_moor(self):
+#         print("Кошка сыта")
+#         print("Муррр-мурр")
+#
+#
+# class Dogs:
+#     def __init__(self, paws=4, ears=2):
+#         self.paws = paws
+#         self.ears = ears
+#
+#     def doing(self):
+#         print("Гав")
+
+
+# Cat_1 = Cats()
+# Dog_1 = Dogs()
+# Animals = [Cat_1, Dog_1]
+# for animal in Animals:
+#     animal.doing()
+#
+# # Инкапсуляция
+#
+# Cat_1.feed()
+
+# # Наследование
+#
+# class Person:
+#     def can_breathe(self):
+#         print("Могу дышать")
+#
+#
+# class Doctor(Person):
+#     def can_cure(self):
+#         print("Могу лечить")
+#
+#
+# Doctor_Dan = Doctor()
+# Doctor_Dan.can_breathe()
+
+
 """
 2. Два метода в классе, один принимает в себя либо строку, либо число.
 
@@ -15,47 +74,91 @@
 
 Длину строки и числа искать во втором методе"""
 
-class Call_number_str:
-
-    def __init__(self,str_1):
-        self.str_1 = str_1
-
-    def make_str(self,):
+# class Call_number_str:
+#
+#     def __init__(self, str_1):
+#         self.str_1 = str_1
+#
+#     def make_str(self):
+#
+#         if isinstance(self.str_1, str):
+#             consonants = []
+#             volwes = []
+#             for i in self.str_1:
+#                 if i in ["Б", " В", "Г", "Д", "Ж", "З", "Й", "К", "Л", "М", "Н", "П", "Р", "С", "Т", "Ф", "Х", "Ц", "Ч",
+#                          "Ш",
+#                          "Щ", "б", "в", "г", "д", "й", "ж", "з", "к", "л", "м", "н", "п", "р", "с", "т", "ф", "х", "ц",
+#                          "ч",
+#                          "ш", "щ"]:
+#                     consonants.append(i)
+#                 if i in ["А", "О", "У", "Ы", "Э", "Е", "Ё", "И", "Ю", "Я", "а", "о", "у", "ы", "э", "я", "е", "ё", "ю",
+#                          "и"]:
+#
+#                     volwes.append(i)
+#
+#                 else:
+#                     continue
+#
+#             if len(consonants) * len(volwes) <= self.len_str_dig():
+#                 print(*volwes)
+#             else:
+#                 print(*consonants)
+#         else:
+#             sum_even_num = sum([int(a) for a in str(self.str_1) if int(a) % 2 == 0])
+#
+#             print(sum_even_num * self.len_str_dig())
+#
+#     def len_str_dig(self):
+#         if isinstance(self.str_1, str):
+#             len_str = len(self.str_1)
+#             return len_str
+#         else:
+#             self.str_1 = str(self.str_1)
+#             len_digit = len(self.str_1)
+#             return len_digit
+#
+#
+# str_my_dig = Call_number_str(1582222)
+# str_my_dig.make_str()
+# str_my_str = Call_number_str("Котик скушал попугая, знать судьба его такая.")
+# str_my_str.make_str()
 
 
 """
-3. Исправьте ошибки, правильный результат работы описан в конце
-
-class Class1:
-
-    def __init__(self, value):
-        self.__var = value
-
-
-    def read_set_del(self):
-        print('Прочтено')
-        return self.__var
-
-
-    def read_set_del(self, value):
-        self.__var = value
-        print('Изменено')
-
-
-    def read_set_del(self):
-        del self.__var
-        print('Удалено')
-
-c1 = Class1(5)
-c1.read_set_del = 35
-c1.read_set_del
-del c1.read_set_del
-
+3. Исправьте ошибки, правильный результат работы описан 
 # Если все ошибки исправлена, то на экран должно выводиться:
 # Прочтено
 # Изменено
 # Удалено
+"""
 
+# class Class1:
+#
+#     def __init__(self, value):
+#         self.__var = value
+#
+#     @property
+#     def read_set_del(self):
+#         print('Прочтено')
+#         return self.__var
+#
+#     @read_set_del.setter
+#     def read_set_del(self, value):
+#         self.__var = value
+#         print('Изменено')
+#
+#     @read_set_del.deleter
+#     def read_set_del(self):
+#         del self.__var
+#         print('Удалено')
+#
+#
+# c1 = Class1(5)
+# c1.read_set_del = 35
+# c1.read_set_del
+# del c1.read_set_del
+
+"""
 
 
 ***4. Напишите программу, которая будет рандомно генирировать от 2 до 5 объектов класса Human.
@@ -118,3 +221,23 @@ del c1.read_set_del
 на экран. Информация должна быть сначала изначальной, потом на конец жизни, чтобы можно было
 сравнить данные.
 """
+
+
+class Human:
+    sex: str
+    name: str
+    age: int
+    character: str
+    job: str
+    capital: int
+    monthly_income: str
+    date_of_birth: str
+    date_of_death: str
+    house: str
+    car: str
+    family_status: str
+    wedding_date: str
+
+
+p=Human()
+print(p)

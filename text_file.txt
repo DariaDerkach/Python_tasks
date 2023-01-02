@@ -1,4 +1,0 @@
-class Human:
-    age = 0
-    name = None
-
